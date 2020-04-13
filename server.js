@@ -12,3 +12,20 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => res.send('Hello World'));
+
+app.route('/api/timestamp/:date_string?')
+    .get((req, res) => {
+        let input = req.params.date_string;
+        if (input === undefined) {
+            let date = new Date().toUTCString();
+            res.json({'date': date});
+        } else {
+            let date = new Date(input);
+            if (date.toString().search('Invalid Date') !== -1) {
+                res.json({'error': date.toString()});
+            } else {
+                let body = {'unix': Date.parse(date.toUTCString()), 'utc': date.toUTCString()};
+                res.json(body);
+            }
+        }
+    });

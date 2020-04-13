@@ -1,5 +1,5 @@
 {
-  "name": "api microservices",
+  "name": "api-microservices",
   "version": "1.0.0",
   "description": "freecodecamp timestamp microservice project",
   "main": "server.js",

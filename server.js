@@ -8,4 +8,7 @@ app.listen(port, () => console.log('server is running at http://localhost:' + po
 
 app.use((req, res, next) => requestLogMiddleware(req, res, next));
 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 app.get('/', (req, res) => res.send('Hello World'));

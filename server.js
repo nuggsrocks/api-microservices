@@ -30,3 +30,16 @@ app.route('/api/timestamp/:date_string?')
             res.json(body);
         }
     });
+
+app.route('/api/whoami')
+    .get((req, res) => {
+        let ip = req.ip;
+        let lang = req.get('Accept-Language');
+        let software = req.get('User-Agent');
+        let body = {
+            'ipaddress': ip,
+            'language': lang,
+            'software': software
+        };
+        res.json(body);
+    });

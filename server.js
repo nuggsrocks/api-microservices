@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const fetch = require('node-fetch');
+
 const requestLogMiddleware = require('request-logging-module');
 
 const port = 8080;
@@ -42,4 +44,15 @@ app.route('/api/whoami')
             'software': software
         };
         res.json(body);
+    });
+
+app.route('/api/wiki-search/')
+    .get((req, res) => {
+        let search = req.query.search;
+        fetch('https://en.wikipedia.org/w/api.php?action=opensearch&search=' + search)
+            .then(res => res.json())
+            .then(data => {
+                res.redirect(data[3][0]);
+            })
+            .catch(e => res.send(e));
     });

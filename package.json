@@ -15,7 +15,7 @@
   "author": "Matthew Fisher",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.0"
+    "express": "^4.21.2",
+    "node-fetch": "^2.7.0"
   }
 }

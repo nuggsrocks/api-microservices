@@ -1,7 +1,5 @@
 # api-microservices
 
-https://nuggsrocks-api-microservices.glitch.me/
-
 ## api endpoints:
 
 ### /api/timestamp/:date_string?

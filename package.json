@@ -6,7 +6,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,10 @@
   "author": "Matthew Fisher",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2",
-    "node-fetch": "^2.7.0"
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }

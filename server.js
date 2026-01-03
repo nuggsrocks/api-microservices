@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios");
 
 const app = express();
 
@@ -43,4 +44,10 @@ app.get("/api/whoami", (req, res) => {
     software: software,
   };
   res.json(body);
+});
+
+app.get("/api/wiki-search/", (req, res) => {
+  const search = req.query.search;
+
+  res.redirect("https://en.wikipedia.org/wiki/" + search);
 });
